@@ -32,16 +32,29 @@ console.log(concatName(['foguete', 'não', 'tem', 'ré']));
 
 // Desafio 5
 function footballPoints(wins, ties) {
-  let vitorias = (wins * 3)
-  let empates = (ties * 1)
-  return vitorias + empates
+  let vitorias = (wins * 3);
+  let empates = (ties * 1);
+  return vitorias + empates;
 }
-console.log(footballPoints(0, 0))
+console.log(footballPoints(0, 0));
 
 // Desafio 6
-function highestCount() {
-  // seu código aqui
+function highestCount(numeros) {
+  let resultado = numeros[0];
+  let final = 0;
+  for (let i = 1; i < numeros.length; i += 1) {
+    if (numeros[i] > resultado) {
+      resultado = numeros[i];
+    }
+  }
+  for (let index = 0; index < numeros.length; index += 1) {
+    if (numeros[index] === resultado) {
+      final += 1;
+    }
+  }
+  return final;
 }
+console.log(highestCount([-3, -1, -1, -3, -2, -3, -1]));
 
 // Desafio 7
 function catAndMouse() {
