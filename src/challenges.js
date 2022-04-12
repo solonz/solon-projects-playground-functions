@@ -1,17 +1,24 @@
 // Desafio 1
-function compareTrue() {
-  // seu código aqui
+function compareTrue(power, ranger) {
+  if (power === true && ranger === true) {
+    return true;
+  }
+  return false;
 }
+console.log(compareTrue(false, false));
 
 // Desafio 2
-function calcArea() {
-  // seu código aqui
+function calcArea(base, height) {
+  return (base * height) / 2;
 }
+console.log(calcArea(10, 50));
 
 // Desafio 3
-function splitSentence() {
-  // seu código aqui
+function splitSentence(string) {
+  let separada = string.split(' ');
+  return separada;
 }
+console.log(splitSentence('go Trybe'));
 
 // Desafio 4
 function concatName() {
