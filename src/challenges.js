@@ -107,20 +107,21 @@ catAndMouse(-12, -24, 0);
 // return console.log(resultado);
 
 // Desafio 8
-function fizzBuzz([arrayDeNumeros]) {
+function fizzBuzz(arrayDeNumeros) {
   let tipo = [];
-  for (let i = 0; i < arrayDeNumeros.length; i++) {
-    if (arrayDeNumeros[i] / 3 % 1 === 0) {
+  for (let nums of arrayDeNumeros) {
+    if (nums % 3 === 0 && nums % 5 === 0) {
+      tipo.push('fizzBuzz');
+    } else if (nums % 3 === 0) {
       tipo.push('fizz');
-    } else if (arrayDeNumeros[i] / 5 % 1 === 0) {
+    } else if (nums % 5 === 0) {
       tipo.push('buzz');
     } else {
-      tipo.push('bunda');
+      tipo.push('bug!');
     }
   }
-  return console.log(tipo);
+  return tipo;
 }
-fizzBuzz([9, 15, 7, 9, 45])
 
 // let dog = 4
 // if (dog % 1 === 0) {
