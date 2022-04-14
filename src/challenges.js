@@ -57,14 +57,75 @@ function highestCount(numeros) {
 console.log(highestCount([-3, -1, -1, -3, -2, -3, -1]));
 
 // Desafio 7
-function catAndMouse() {
-  // seu código aqui
+// function catAndMouse(mouse, cat1, cat2) {
+//   let distanciagato1 = Math.abs(mouse - cat1);
+//   let distanciagato2 = Math.abs(mouse - cat2);
+//   if (distanciagato1 < distanciagato2) {
+//     return console.log('cat1');
+//   } else if (distanciagato1 === distanciagato2) {
+//     return console.log('os gatos trombam e o rato foge');
+//   } else {
+//     return console.log('cat2');
+//   }
+// }
+// catAndMouse(-12, -24, 0);
+
+// if ternario
+function setNumber(distanciagato1, distanciagato2) {
+  return (distanciagato1 < distanciagato2) ? distanciagato2 - distanciagato1 : distanciagato1 - distanciagato2;
 }
+function compare(dif1, dif2) {
+  let frase = '';
+  if (dif1 < dif2) {
+    frase = 'cat1';
+  }
+  if (dif1 > dif2) {
+    frase = 'cat2';
+  }
+  if (frase === '') {
+    frase = 'os gatos trombam e o rato foge';
+  }
+  return frase;
+}
+function catAndMouse(mouse, cat1, cat2) {
+  let difcat1 = setNumber(mouse, cat1)
+  let difcat2 = setNumber(mouse, cat2)
+  return compare(difcat1, difcat2)
+}
+catAndMouse(-12, -24, 0);
+
+// let distanciagato1 = Math.abs(mouse - cat1);
+// let distanciagato2 = Math.abs(mouse - cat2);
+// let resultado = '';
+// if (distanciagato1 < distanciagato2) {
+//   resultado = ('cat1');
+// } else if (distanciagato1 === distanciagato2) {
+//   resultado = ('os gatos trombam e o rato foge');
+// } else {
+//   resultado = ('cat2');
+// }
+// return console.log(resultado);
 
 // Desafio 8
-function fizzBuzz() {
-  // seu código aqui
+function fizzBuzz([arrayDeNumeros]) {
+  let tipo = [];
+  for (let i = 0; i < arrayDeNumeros.length; i++) {
+    if (arrayDeNumeros[i] / 3 % 1 === 0) {
+      tipo.push('fizz');
+    } else if (arrayDeNumeros[i] / 5 % 1 === 0) {
+      tipo.push('buzz');
+    } else {
+      tipo.push('bunda');
+    }
+  }
+  return console.log(tipo);
 }
+fizzBuzz([9, 15, 7, 9, 45])
+
+// let dog = 4
+// if (dog % 1 === 0) {
+//   console.log('inteiro')
+// }
 
 // Desafio 9
 function encode() {
