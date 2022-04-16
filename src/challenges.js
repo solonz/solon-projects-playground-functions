@@ -71,8 +71,8 @@ console.log(highestCount([-3, -1, -1, -3, -2, -3, -1]));
 // catAndMouse(-12, -24, 0);
 
 // if ternario
-function setNumber(distanciagato1, distanciagato2) {
-  return (distanciagato1 < distanciagato2) ? distanciagato2 - distanciagato1 : distanciagato1 - distanciagato2;
+function setNumber(distcat1, distcat2) {
+  return (distcat1 < distcat2) ? distcat2 - distcat1 : distcat1 - distcat2;
 }
 function compare(dif1, dif2) {
   let frase = '';
@@ -88,9 +88,9 @@ function compare(dif1, dif2) {
   return frase;
 }
 function catAndMouse(mouse, cat1, cat2) {
-  let difcat1 = setNumber(mouse, cat1)
-  let difcat2 = setNumber(mouse, cat2)
-  return compare(difcat1, difcat2)
+  let difcat1 = setNumber(mouse, cat1);
+  let difcat2 = setNumber(mouse, cat2);
+  return compare(difcat1, difcat2);
 }
 catAndMouse(-12, -24, 0);
 
@@ -123,18 +123,46 @@ function fizzBuzz(arrayDeNumeros) {
   return tipo;
 }
 
-// let dog = 4
-// if (dog % 1 === 0) {
-//   console.log('inteiro')
-// }
-
 // Desafio 9
-function encode() {
-  // seu código aqui
+function encode(mensagem) {
+  let mensagemCodificada = mensagem.split('');
+  for (let index = 0; index < mensagemCodificada.length; index += 1) {
+    if (mensagem[index] === 'a') {
+      mensagemCodificada[index] = 1;
+    } else if (mensagem[index] === 'e') {
+      mensagemCodificada[index] = 2;
+    } else if (mensagem[index] === 'i') {
+      mensagemCodificada[index] = 3;
+    } else if (mensagem[index] === 'o') {
+      mensagemCodificada[index] = 4;
+    } else if (mensagem[index] === 'u') {
+      mensagemCodificada[index] = 5;
+    } else (mensagemCodificada[index] = mensagem[index]);
+  }
+  let mensagemCodificadaString = mensagemCodificada.join('');
+  return mensagemCodificadaString;
 }
-function decode() {
-  // seu código aqui
+encode('hi there');
+
+function decode(criptografia) {
+  let mensagemCriptografada = criptografia.split('');
+  for (let index = 0; index < mensagemCriptografada.length; index += 1) {
+    if (criptografia[index] === '1') {
+      mensagemCriptografada[index] = 'a';
+    } else if (criptografia[index] === '2') {
+      mensagemCriptografada[index] = 'e';
+    } else if (criptografia[index] === '3') {
+      mensagemCriptografada[index] = 'i';
+    } else if (criptografia[index] === '4') {
+      mensagemCriptografada[index] = 'o';
+    } else if (criptografia[index] === '5') {
+      mensagemCriptografada[index] = 'u';
+    } else (mensagemCriptografada[index] = criptografia[index]);
+  }
+  let mensagemCriptografadaString = mensagemCriptografada.join('');
+  return mensagemCriptografadaString;
 }
+decode('h3 th2r2');
 
 // Desafio 10
 function techList() {
