@@ -165,9 +165,22 @@ function decode(criptografia) {
 decode('h3 th2r2');
 
 // Desafio 10
-function techList() {
-  // seu código aqui
+function techList(Habilidades, name) {
+  let objetos = [];
+  if (Habilidades.length === 0) {
+    objetos = 'Vazio!';
+  } else {
+    for (let index = 0; index < Habilidades.length; index += 1) {
+      Habilidades.sort();
+      objetos.push({
+        tech: Habilidades[index], 
+        name: name,
+      });
+    }
+  }
+  return objetos;
 }
+console.log(techList(['Pernalonga', 'Patolino', 'Tom', 'Jerry', 'Cat', 'Dog'], 'Cartoon'));
 
 module.exports = {
   calcArea,
